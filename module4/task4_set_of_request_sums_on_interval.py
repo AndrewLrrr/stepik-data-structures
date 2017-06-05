@@ -28,21 +28,15 @@ class AVLTree:
 
     @staticmethod
     def max(node):
-        if node is None:
-            return Node(float('inf'))
-        else:
-            if node.right is None:
-                return node
-            return AVLTree.max(node.right)
+        if node.right is None:
+            return node
+        return AVLTree.max(node.right)
 
     @staticmethod
     def min(node):
-        if node is None:
-            return Node(-float('inf'))
-        else:
-            if node.left is None:
-                return node
-            return AVLTree.min(node.left)
+        if node.left is None:
+            return node
+        return AVLTree.min(node.left)
 
     @staticmethod
     def find(key, node):
